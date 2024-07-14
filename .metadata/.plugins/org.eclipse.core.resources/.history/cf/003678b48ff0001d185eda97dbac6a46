@@ -1,0 +1,27 @@
+package Training;
+
+public class Polymorphism {
+	void add(int a, int b)
+	{
+		int c=a+b;
+		System.out.println("result from a+b"+c);
+	}
+	void add(int a, int b,int d)
+	{
+		int c=a+b+d;
+		System.out.println("result from a+b+c"+c);
+	}
+
+	public static void main(String[] args) {
+		Polymorphism P=new Polymorphism();
+		int a=20;
+		int b=20;
+		int d=20;
+		P.add(a,b);
+		P.add(a, b,d);
+		
+	
+
+	}
+
+}

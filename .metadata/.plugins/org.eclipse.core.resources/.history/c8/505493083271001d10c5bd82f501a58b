@@ -1,0 +1,30 @@
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Locators {
+
+	public static void main(String[] args) {
+
+		System.setProperty("webdriver.chrome.driver","C:\\Program Files (x86)\\Amdocs\\Ginger by amdocs\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));// add wait time
+		driver.get("https://www.rahulshettyacademy.com/locatorspractice/");
+		driver.findElement(By.id("inputUsername")).sendKeys("Mahii");
+		driver.findElement(By.name("inputPassword")).sendKeys("India");
+		driver.findElement(By.className("signInBtn")).click();
+		System.out.println(driver.findElement(By.cssSelector("p.error")).getText());
+		driver.findElement(By.linkText("Forgot your password?")).click() ;
+		driver.findElement(By.xpath(" //input[@placeholder='Name']")).sendKeys("Mahesh");
+		driver.findElement(By.xpath(" //input[@placeholder='Email']")).sendKeys("mahesh@gmail.com");
+		driver.findElement(By.xpath(" //input[@placeholder='Phone Number']")).sendKeys("0943503525");
+		driver.findElement(By.xpath(" //input[@placeholder='Email']")).clear();
+		driver.findElement(By.xpath(" //input[@placeholder='Email']")).sendKeys("mahesh123@gmail.com");
+		driver.findElement(By.xpath("//button[@class='reset-pwd-btn']")).click();
+		System.out.println(driver.findElement(By.xpath("//p[@class='infoMsg']")).getText());
+		
+	}
+
+}
